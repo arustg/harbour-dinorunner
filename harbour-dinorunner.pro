@@ -2,8 +2,10 @@ TARGET = harbour-dinorunner
 
 CONFIG += sailfishapp
 
-DISTFILES += qml/harbour-dinorunner.qml \
-    icons/256x256/harbour-dinorunner.png \
+DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+
+DISTFILES += \
+    qml/harbour-dinorunner.qml \
     qml/cover/CoverPage.qml \
     rpm/harbour-dinorunner.changes.in \
     rpm/harbour-dinorunner.changes.run.in \
@@ -30,12 +32,11 @@ INSTALLS += web
     web.files = web
     web.path = /usr/share/$${TARGET}
 
-# to disable building translations every time, comment out the
-# following CONFIG line
 CONFIG += sailfishapp_i18n
 
-# German translation is enabled as an example. If you aren't
-# planning to localize your app, remember to comment out the
-# following TRANSLATIONS line. And also do not forget to
-# modify the localized app name in the the .desktop file.
 TRANSLATIONS += translations/harbour-dinorunner-de.ts
+
+SOURCES += \
+    src/untitled.cpp
+
+
