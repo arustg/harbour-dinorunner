@@ -10,7 +10,7 @@ Name:       harbour-dinorunner
 
 Summary:    Adaptation of a famous browser game for the Sailfish OS
 Version:    1.0
-Release:    0
+Release:    1
 Group:      Qt/Qt
 License:    GNU GPLv3
 URL:        https://github.com/arustg/harbour-dinorunner

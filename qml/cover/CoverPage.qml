@@ -17,6 +17,6 @@ CoverBackground {
         }
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: Theme.fontSizeLarge
-        text: "Run, Dino!"
+        text: "Dino"
     }
  }
