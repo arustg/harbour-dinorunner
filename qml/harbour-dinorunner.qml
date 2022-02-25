@@ -4,10 +4,11 @@ import Sailfish.WebView 1.0
 
 ApplicationWindow {
     cover: Qt.resolvedUrl("cover/CoverPage.qml")
-    allowedOrientations: defaultAllowedOrientations
+
 
         initialPage: Component {
             WebViewPage {
+              allowedOrientations: Orientation.All
                 WebView {
                     anchors.fill: parent
                     url: "file:///usr/share/harbour-dinorunner/web/www/index.html"
