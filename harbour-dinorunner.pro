@@ -2,7 +2,7 @@ TARGET = harbour-dinorunner
 
 CONFIG += sailfishapp
 
-DEFINES += APP_VERSION=\\\"$$VERSION\\\"
+SOURCES += src/harbour-dinorunner.cpp
 
 DISTFILES += \
     qml/harbour-dinorunner.qml \
@@ -11,7 +11,6 @@ DISTFILES += \
     rpm/harbour-dinorunner.changes.run.in \
     rpm/harbour-dinorunner.spec \
     rpm/harbour-dinorunner.yaml \
-    translations/*.ts \
     harbour-dinorunner.desktop \
     web/assets/default_100_percent/100-disabled.png \
     web/assets/default_100_percent/100-error-offline.png \
@@ -31,12 +30,3 @@ SAILFISHAPP_ICONS = 86x86 108x108 128x128 172x172 256x256
 INSTALLS += web
     web.files = web
     web.path = /usr/share/$${TARGET}
-
-CONFIG += sailfishapp_i18n
-
-TRANSLATIONS += translations/harbour-dinorunner-de.ts
-
-SOURCES += \
-    src/untitled.cpp
-
-

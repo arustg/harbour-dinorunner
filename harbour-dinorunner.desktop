@@ -1,11 +1,6 @@
 [Desktop Entry]
 Type=Application
-Name=Dino
+X-Nemo-Application-Type=silica-qt5
 Icon=harbour-dinorunner
 Exec=harbour-dinorunner
-
-[X-Sailjail]
-Sandboxing=Enabled
-Permissions=WebView
-OrganizationName=openrepos.net
-ApplicationName=Dino
+Name=Dino
