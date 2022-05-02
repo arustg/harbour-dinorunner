@@ -4,3 +4,8 @@ X-Nemo-Application-Type=silica-qt5
 Icon=harbour-dinorunner
 Exec=harbour-dinorunner
 Name=Dino
+
+[X-Sailjail]
+OrganizationName=org.arustg
+ApplicationName=harbour-dinorunner
+Permissions=WebView

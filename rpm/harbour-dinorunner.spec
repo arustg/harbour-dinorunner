@@ -8,9 +8,9 @@ Name:       harbour-dinorunner
 # >> macros
 # << macros
 
-Summary:    Adaptation of a famous browser game for the Sailfish OS
-Version:    1.0
-Release:    2
+Summary:    Famous Browser Game
+Version:    1.1
+Release:    0
 Group:      Qt/Qt
 License:    GNU GPLv3
 URL:        https://github.com/arustg/harbour-dinorunner

@@ -2,6 +2,7 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 // extract from chromium source code by @liuwayong
+
 (function () {
     'use strict';
     /**
@@ -262,7 +263,7 @@
          * @param {*} value
          */
         updateConfigSetting: function (setting, value) {
-            if (setting in this.config && value != undefined) {
+            if (setting in this.config && value !== undefined) {
                 this.config[setting] = value;
 
                 switch (setting) {
@@ -538,7 +539,7 @@
                 var hasObstacles = this.runningTime > this.config.CLEAR_TIME;
 
                 // First jump triggers the intro.
-                if (this.tRex.jumpCount == 1 && !this.playingIntro) {
+                if (this.tRex.jumpCount === 1 && !this.playingIntro) {
                     this.playIntro();
                 }
 
@@ -669,9 +670,9 @@
                 e.preventDefault();
             }
 
-            if (e.target != this.detailsButton) {
+            if (e.target !== this.detailsButton) {
                 if (!this.crashed && (Runner.keycodes.JUMP[e.keyCode] ||
-                    e.type == Runner.events.TOUCHSTART)) {
+                    e.type === Runner.events.TOUCHSTART)) {
                     if (!this.playing) {
                         this.loadSounds();
                         this.playing = true;
@@ -687,8 +688,8 @@
                     }
                 }
 
-                if (this.crashed && e.type == Runner.events.TOUCHSTART &&
-                    e.currentTarget == this.containerEl) {
+                if (this.crashed && e.type === Runner.events.TOUCHSTART &&
+                    e.currentTarget === this.containerEl) {
                     this.restart();
                 }
             }
@@ -713,8 +714,8 @@
         onKeyUp: function (e) {
             var keyCode = String(e.keyCode);
             var isjumpKey = Runner.keycodes.JUMP[keyCode] ||
-                e.type == Runner.events.TOUCHEND ||
-                e.type == Runner.events.MOUSEDOWN;
+                e.type === Runner.events.TOUCHEND ||
+                e.type === Runner.events.MOUSEDOWN;
 
             if (this.isRunning() && isjumpKey) {
                 this.tRex.endJump();
@@ -744,8 +745,8 @@
          * @return {boolean}
          */
         isLeftClickOnCanvas: function (e) {
-            return e.button != null && e.button < 2 &&
-                e.type == Runner.events.MOUSEUP && e.target == this.canvas;
+            return e.button !== null && e.button < 2 &&
+                e.type === Runner.events.MOUSEUP && e.target === this.canvas;
         },
 
         /**
@@ -839,8 +840,8 @@
          * Pause the game if the tab is not in focus.
          */
         onVisibilityChange: function (e) {
-            if (document.hidden || document.webkitHidden || e.type == 'blur' ||
-                document.visibilityState != 'visible') {
+            if (document.hidden || document.webkitHidden || e.type === 'blur' ||
+                document.visibilityState !== 'visible') {
                 this.stop();
             } else if (!this.crashed) {
                 this.tRex.reset();
@@ -914,7 +915,7 @@
             // our canvas element.
             context.scale(ratio, ratio);
             return true;
-        } else if (devicePixelRatio == 1) {
+        } else if (devicePixelRatio === 1) {
             // Reset the canvas width / height. Fixes scaling bug when the page is
             // zoomed and the devicePixelRatio changes accordingly.
             canvas.style.width = canvas.width + 'px';
@@ -1370,7 +1371,7 @@
                         this.timer += deltaTime;
                         if (this.timer >= this.typeConfig.frameRate) {
                             this.currentFrame =
-                                this.currentFrame == this.typeConfig.numFrames - 1 ?
+                                this.currentFrame === this.typeConfig.numFrames - 1 ?
                                     0 : this.currentFrame + 1;
                             this.timer = 0;
                         }
@@ -1644,7 +1645,7 @@
                 this.msPerFrame = Trex.animFrames[opt_status].msPerFrame;
                 this.currentAnimFrames = Trex.animFrames[opt_status].frames;
 
-                if (opt_status == Trex.status.WAITING) {
+                if (opt_status === Trex.status.WAITING) {
                     this.animStartTime = getTimeStamp();
                     this.setBlinkDelay();
                 }
@@ -1656,7 +1657,7 @@
                     this.config.INTRO_DURATION) * deltaTime);
             }
 
-            if (this.status == Trex.status.WAITING) {
+            if (this.status === Trex.status.WAITING) {
                 this.blink(getTimeStamp());
             } else {
                 this.draw(this.currentAnimFrames[this.currentFrame], 0);
@@ -1664,13 +1665,13 @@
 
             // Update the frame position.
             if (this.timer >= this.msPerFrame) {
-                this.currentFrame = this.currentFrame ==
+                this.currentFrame = this.currentFrame ===
                     this.currentAnimFrames.length - 1 ? 0 : this.currentFrame + 1;
                 this.timer = 0;
             }
 
             // Speed drop becomes duck if the down key is still being pressed.
-            if (this.speedDrop && this.yPos == this.groundYPos) {
+            if (this.speedDrop && this.yPos === this.groundYPos) {
                 this.speedDrop = false;
                 this.setDuck(true);
             }
@@ -1684,7 +1685,7 @@
         draw: function (x, y) {
             var sourceX = x;
             var sourceY = y;
-            var sourceWidth = this.ducking && this.status != Trex.status.CRASHED ?
+            var sourceWidth = this.ducking && this.status !== Trex.status.CRASHED ?
                 this.config.WIDTH_DUCK : this.config.WIDTH;
             var sourceHeight = this.config.HEIGHT;
 
@@ -1700,14 +1701,14 @@
             sourceY += this.spritePos.y;
 
             // Ducking.
-            if (this.ducking && this.status != Trex.status.CRASHED) {
+            if (this.ducking && this.status !== Trex.status.CRASHED) {
                 this.canvasCtx.drawImage(Runner.imageSprite, sourceX, sourceY,
                     sourceWidth, sourceHeight,
                     this.xPos, this.yPos,
                     this.config.WIDTH_DUCK, this.config.HEIGHT);
             } else {
                 // Crashed whilst ducking. Trex is standing up so needs adjustment.
-                if (this.ducking && this.status == Trex.status.CRASHED) {
+                if (this.ducking && this.status === Trex.status.CRASHED) {
                     this.xPos++;
                 }
                 // Standing / running
@@ -1735,7 +1736,7 @@
             if (deltaTime >= this.blinkDelay) {
                 this.draw(this.currentAnimFrames[this.currentFrame], 0);
 
-                if (this.currentFrame == 1) {
+                if (this.currentFrame === 1) {
                     // Set new random delay to blink.
                     this.setBlinkDelay();
                     this.animStartTime = time;
@@ -1819,10 +1820,10 @@
          * @param {boolean} isDucking.
          */
         setDuck: function (isDucking) {
-            if (isDucking && this.status != Trex.status.DUCKING) {
+            if (isDucking && this.status !== Trex.status.DUCKING) {
                 this.update(0, Trex.status.DUCKING);
                 this.ducking = true;
-            } else if (this.status == Trex.status.DUCKING) {
+            } else if (this.status === Trex.status.DUCKING) {
                 this.update(0, Trex.status.RUNNING);
                 this.ducking = false;
             }
@@ -2016,7 +2017,7 @@
             if (!this.acheivement) {
                 distance = this.getActualDistance(distance);
                 // Score has gone beyond the initial digit count.
-                if (distance > this.maxScore && this.maxScoreUnits ==
+                if (distance > this.maxScore && this.maxScoreUnits ===
                     this.config.MAX_DISTANCE_UNITS) {
                     this.maxScoreUnits++;
                     this.maxScore = parseInt(this.maxScore + '9');
@@ -2244,7 +2245,7 @@
          */
         update: function (activated, delta) {
             // Moon phase.
-            if (activated && this.opacity == 0) {
+            if (activated && this.opacity === 0) {
                 this.currentPhase++;
 
                 if (this.currentPhase >= NightMode.phases.length) {
@@ -2253,7 +2254,7 @@
             }
 
             // Fade in / out.
-            if (activated && (this.opacity < 1 || this.opacity == 0)) {
+            if (activated && (this.opacity < 1 || this.opacity === 0)) {
                 this.opacity += NightMode.config.FADE_SPEED;
             } else if (this.opacity > 0) {
                 this.opacity -= NightMode.config.FADE_SPEED;
@@ -2288,7 +2289,7 @@
         },
 
         draw: function () {
-            var moonSourceWidth = this.currentPhase == 3 ? NightMode.config.WIDTH * 2 :
+            var moonSourceWidth = this.currentPhase === 3 ? NightMode.config.WIDTH * 2 :
                 NightMode.config.WIDTH;
             var moonSourceHeight = NightMode.config.HEIGHT;
             var moonSourceX = this.spritePos.x + NightMode.phases[this.currentPhase];
@@ -2402,7 +2403,7 @@
 
             for (var dimension in HorizonLine.dimensions) {
                 if (IS_HIDPI) {
-                    if (dimension != 'YPOS') {
+                    if (dimension !== 'YPOS') {
                         this.sourceDimensions[dimension] =
                             HorizonLine.dimensions[dimension] * 2;
                     }
@@ -2448,7 +2449,7 @@
          */
         updateXPos: function (pos, increment) {
             var line1 = pos;
-            var line2 = pos == 0 ? 1 : 0;
+            var line2 = pos === 0 ? 1 : 0;
 
             this.xPos[line1] -= increment;
             this.xPos[line2] = this.xPos[line1] + this.dimensions.WIDTH;
@@ -2671,7 +2672,7 @@
             var duplicateCount = 0;
 
             for (var i = 0; i < this.obstacleHistory.length; i++) {
-                duplicateCount = this.obstacleHistory[i] == nextObstacleType ?
+                duplicateCount = this.obstacleHistory[i] === nextObstacleType ?
                     duplicateCount + 1 : 0;
             }
             return duplicateCount >= Runner.config.MAX_OBSTACLE_DUPLICATION;
