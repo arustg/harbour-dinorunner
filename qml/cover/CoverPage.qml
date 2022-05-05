@@ -5,8 +5,8 @@ CoverBackground {
 
     Image {
         anchors.fill: parent
-        fillMode: Image.PreserveAspectFit
-        opacity: 0.7
+        fillMode: Image.Stretch
+        opacity: 0.5
         source: "/usr/share/harbour-dinorunner/web/assets/cover.png"}
 
     Label {
@@ -17,6 +17,6 @@ CoverBackground {
         }
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: Theme.fontSizeLarge
-        text: "Dino"
+        text: "DINO"
     }
  }
