@@ -17,6 +17,7 @@ CoverBackground {
         }
         horizontalAlignment: Text.AlignHCenter
         font.pixelSize: Theme.fontSizeLarge
+        color:  Theme.primaryColor
         text: "DINO"
     }
  }
