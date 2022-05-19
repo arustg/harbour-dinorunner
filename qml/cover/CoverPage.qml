@@ -9,15 +9,15 @@ CoverBackground {
         opacity: 0.5
         source: "/usr/share/harbour-dinorunner/web/assets/cover.png"}
 
-    Label {
-        anchors {
-            horizontalCenter: parent.horizontalCenter
-            top: parent.top
-            topMargin: Theme.paddingLarge
-        }
-        horizontalAlignment: Text.AlignHCenter
-        font.pixelSize: Theme.fontSizeLarge
-        color:  Theme.primaryColor
-        text: "DINO"
-    }
+//    Label {
+//        anchors {
+//            horizontalCenter: parent.horizontalCenter
+//            top: parent.top
+//            topMargin: Theme.paddingLarge
+//        }
+//        horizontalAlignment: Text.AlignHCenter
+//        font.pixelSize: Theme.fontSizeLarge
+//        color:  Theme.primaryColor
+//        text: "DINO"
+//    }
  }
