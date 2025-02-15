@@ -5,7 +5,7 @@ CoverBackground {
 
     Image {
         anchors.fill: parent
-        fillMode: Image.Stretch
+        fillMode: Image.PreserveAspectCrop
         opacity: 0.5
         source: "/usr/share/harbour-dinorunner/web/assets/cover.png"}
 
