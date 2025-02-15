@@ -9,7 +9,7 @@ Name:       harbour-dinorunner
 # << macros
 
 Summary:    Famous Browser Game
-Version:    1.1.1
+Version:    1.2.5
 Release:    0
 Group:      Qt/Qt
 License:    GNU GPLv3
