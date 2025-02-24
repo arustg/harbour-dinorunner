@@ -1,23 +1,21 @@
-import QtQuick 2.6
+import QtQuick 2.0
 import Sailfish.Silica 1.0
 
 CoverBackground {
+    objectName: "defaultCover"
 
-    Image {
+    Cover {
+        id: cover
         anchors.fill: parent
-        fillMode: Image.PreserveAspectCrop
-        opacity: 0.5
-        source: "/usr/share/harbour-dinorunner/web/assets/cover.png"}
+        transparent: true
 
-//    Label {
-//        anchors {
-//            horizontalCenter: parent.horizontalCenter
-//            top: parent.top
-//            topMargin: Theme.paddingLarge
-//        }
-//        horizontalAlignment: Text.AlignHCenter
-//        font.pixelSize: Theme.fontSizeLarge
-//        color:  Theme.primaryColor
-//        text: "DINO"
-//    }
- }
+        Image {
+            anchors.fill: parent
+            fillMode: Image.PreserveAspectCrop
+            opacity: 0.2
+            source: "/usr/share/harbour-dinorunner/web/assets/cover.png"
+
+        }
+    }
+
+}
