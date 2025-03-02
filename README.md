@@ -1,4 +1,6 @@
-# Dinorunner
+# Dino
 Famous Browser Game for Sailfish OS
 
-![photo_2022-03-10_10-19-36](https://user-images.githubusercontent.com/4253881/159547570-ff2470c0-f78c-4575-9090-20f480ec5cc2.jpg)
+![Screenshot_20250224_203905_001](https://github.com/user-attachments/assets/8eeb73d6-44e7-4357-b2e7-9558837f1773)
+![Screenshot_20250224_203914_001](https://github.com/user-attachments/assets/83107faa-b390-4417-ab1c-63657e957156)
+
