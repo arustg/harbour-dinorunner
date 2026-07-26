@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en" class="offline">
 <head>
   <meta charset="utf-8">
@@ -12,8 +13,7 @@
       --link:#0b57d0;
     }
 
-
-    @media (prefers-color-scheme: dark){
+    @media (prefers-color-scheme: light){
       :root{
         --bg: #0f1115;
         --text:#e8eaf0;
@@ -22,7 +22,6 @@
         --link:#7ab3ff;
       }
     }
-
 
     html[data-theme="dark"]{
       --bg: #0f1115;
@@ -69,11 +68,9 @@
   <div class="wrap">
       <button id="themeBtn" type="button">☀︎</button>
      </div>
-  </div>
 
 <script>
   const btn = document.getElementById('themeBtn');
-
 
     btn.addEventListener('click', () => {
       const root = document.documentElement;
@@ -83,7 +80,6 @@
     });
   </script>
 
-</style>
   <style>/* Copyright 2013 The Chromium Authors
  * Use of this source code is governed by a BSD-style license that can be
  * found in the LICENSE file. */
@@ -1088,7 +1084,7 @@ html[dir='rtl'].offline .icon-offline {
   z-index: 2;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   .icon {
     filter: invert(1);
   }
@@ -2083,7 +2079,7 @@ Runner.prototype = {
 
     // Handle dark mode
     const darkModeMediaQuery =
-        window.matchMedia('(prefers-color-scheme: dark)');
+        window.matchMedia('(prefers-color-scheme: light)');
     this.isDarkMode = darkModeMediaQuery && darkModeMediaQuery.matches;
     darkModeMediaQuery.addListener((e) => {
       this.isDarkMode = e.matches;

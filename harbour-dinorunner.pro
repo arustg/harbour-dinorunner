@@ -12,6 +12,7 @@ DISTFILES += \
     rpm/harbour-dinorunner.spec \
     rpm/harbour-dinorunner.yaml \
     harbour-dinorunner.desktop \
+    translations/harbour-dinorunner.ts \
     web/assets/cover.png \
     web/assets/logo.png \
     web/www/index.html

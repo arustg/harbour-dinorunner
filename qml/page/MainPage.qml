@@ -18,7 +18,7 @@ Page {
             extraContent.children: [
                 IconButton {
                     objectName: "aboutButton"
-                    icon.source: "image://theme/icon-m-about"
+                    icon.source: "image://theme/icon-m-enter-accept"
                     icon.color: Theme.highlightDimmerColor
                      anchors.horizontalCenter: parent.right
                     onClicked: pageStack.push(Qt.resolvedUrl("AboutPage.qml"))

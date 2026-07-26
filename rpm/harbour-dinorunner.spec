@@ -1,7 +1,7 @@
 Name:       harbour-dinorunner
 Summary:    Famous Browser Game
 Version:    1.4
-Release:    0
+Release:    1
 Group:      Qt/Qt
 License:    BSD-3-Clause
 URL:        https://github.com/arustg/harbour-dinorunner
